@@ -1,0 +1,117 @@
+\documentclass[12pt]{article}
+\NeedsTeXFormat{LaTeX2e}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Template by Nicholas Bertollo
+% You may change and reuse this as you see fit
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Replace this information!
+
+\newcommand{\sid}{123456789} 
+\newcommand{\compunit}{COMP2X23}
+\newcommand{\ass}{X}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[svgnames]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2.7cm,a4paper]{geometry}
+
+\usepackage[osf]{mathpazo}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,mathtools}
+
+\usepackage{hyperref,url}
+\usepackage{cleveref}
+\usepackage{xstring}
+
+\usepackage{environ}
+\usepackage{tasks}
+
+\usepackage{etoolbox}
+\usepackage{fourier-orns}
+\usepackage{kvoptions}
+\usepackage[]{units}
+\usepackage[normal]{subfigure}
+
+% Algorithms package
+
+% \usepackage[ruled]{algorithm2e} % You can use the algorithm2e if you'd like
+\usepackage[noend]{algpseudocode} % You may get rid of noend if you like. 
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+
+% Header
+
+\usepackage{fancyhdr}
+\addtolength{\headheight}{2.5pt}
+\pagestyle{fancy}
+\fancyhead{} 
+\fancyhead[L]{\sc \compunit}
+\renewcommand{\headrulewidth}{0.75pt}
+\fancyhead[C]{\sc SID: \sid}
+\fancyhead[R]{Assignment \ass}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Some basic mathematics commands!
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\map}[2]{\,{:}\,#1\!\longrightarrow\!#2}
+
+% fancy thing I found on the internet
+
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+
+% The Solution!
+
+\newcommand{\solution}[1]{\vspace{.2cm}\noindent \textbf{Solution #1)}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\begin{document}
+
+\solution{1} 
+This is just a couple examples of what you can do in \LaTeX. 
+You may delete it all. 
+
+\solution{1a} 
+It isn't considered sufficient to explain your algorithm through pseudo-code only, however here is a basic example using the \href{https://ctan.org/pkg/algorithmicx?lang=en}{\textbf{algorithmicx package}}.
+
+\begin{algorithm}
+    \caption{This squares every element of a list} \label{alg:pre}
+    \begin{algorithmic}[1] % [1] adds line numbers!
+        \Require Integer list of size $n$
+        \Statex
+        \Function{square}{\textit{elements}}
+            \For{(index, element) $\in \{ 1, 2, \cdots, n \} \times \textit{elements}$}
+                \Let{list[index]}{element $\cdot$ element}
+            \EndFor
+        \EndFunction
+    \end{algorithmic}
+\end{algorithm}
+
+\solution{1b}
+\Cref{alg:pre} is $O(n)$ because if $T(n)$ is a function which counts the number of $O(1)$ operations, then $T(n)$ is upper bounded by some constant multiple of $n$, i.e. there exists $C$ such that $T(n) \le C \cdot n$ for all $n$ large enough. 
+
+\solution{1c} 
+For a predicate $P$, $P(0) \wedge (P(k) \to P(k + 1)) \to (\forall k \in \N, P(k))$. 
+A function $x\map{\N}{\R}$ can be represented as a sequence $\{x_n\}_{n \in \N}$.
+$\log_2(n) = \log(n)$ in COMP2123!
+
+\newpage
+\solution{2a}
+Start a new question on a new page each time to make it easier and to hand in on gradescope.
+
+\end{document}
