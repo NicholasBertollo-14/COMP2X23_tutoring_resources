@@ -1,5 +1,5 @@
 
-# COMP2X23 Tutoring Resources
+# Data Structures and Algorithms
 
 I created this semester 1 of 2025 for the COMP2123 course.
 A lot of students are unable to problem solve, or unable to see the larger focus of the course, and so I made this document.
